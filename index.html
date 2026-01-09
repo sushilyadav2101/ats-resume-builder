@@ -1,0 +1,242 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+</head>
+<body>
+
+  <h1>Resume Builder</h1>
+
+  <form>
+
+    <h2>Personal Information</h2>
+
+    <label>Full Name:</label><br>
+    <input type="text" placeholder="Enter your full name"><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" placeholder="Enter your email"><br><br>
+
+    <label>Phone:</label><br>
+    <input type="tel" placeholder="Enter your phone number"><br><br>
+
+    <label>Location:</label><br>
+    <input type="text" placeholder="City, Country"><br><br>
+
+  </form>
+
+</body>
+</html> -->
+
+<!-- NEW COPY -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Resume Builder</h1>
+    <p class="subtitle">Create a professional resume step by step</p>
+
+    <form>
+
+      <h2>Personal Information</h2>
+
+      <label>Full Name</label>
+      <input type="text" placeholder="e.g. Rahul Sharma">
+
+      <label>Email</label>
+      <input type="email" placeholder="e.g. rahul@gmail.com">
+
+      <label>Phone</label>
+      <input type="tel" placeholder="e.g. 9876543210">
+
+      <label>Location</label>
+      <input type="text" placeholder="City, Country">
+
+    </form>
+
+  </div>
+
+</body>
+</html> -->
+
+
+<!-- STEP 3 GOING    -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Resume Builder</h1>
+    <p class="subtitle">Create a professional resume step by step</p>
+
+    <form>
+
+      Personal Info -->
+      <!-- <h2>Personal Information</h2>
+
+      <label>Full Name</label>
+      <input type="text">
+
+      <label>Email</label>
+      <input type="email">
+
+      <label>Phone</label>
+      <input type="tel">
+
+      <label>Location</label>
+      <input type="text"> -->
+
+      <!-- Experience -->
+      <!-- <h2>Work Experience</h2>
+
+      <div id="experience-container"></div>
+
+      <button type="button" onclick="addExperience()">➕ Add Experience</button>
+
+    </form>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html> -->
+
+<!-- STEP 4 GOING  -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="layout"> -->
+
+  <!-- FORM SECTION -->
+  <!-- <div class="form-section">
+
+    <h1>Resume Builder</h1>
+
+    <h2>Choose Resume Template</h2>
+    <select onchange="changeTemplate(this.value)">
+      <option value="template1">Simple</option>
+      <option value="template2">Professional</option>
+    </select>
+
+    <h2>Profile Photo (Optional)</h2>
+    <input type="file" accept="image/*" onchange="loadPhoto(event)">
+
+    <h2>Personal Information</h2>
+    <input type="text" placeholder="Full Name" oninput="updatePreview()">
+    <input type="email" placeholder="Email" oninput="updatePreview()">
+    <input type="tel" placeholder="Phone" oninput="updatePreview()">
+    <input type="text" placeholder="Location" oninput="updatePreview()">
+
+    <h2>Work Experience</h2>
+    <div id="experience-container"></div>
+    <button type="button" onclick="addExperience()">➕ Add Experience</button>
+
+    <h2>Education</h2>
+    <div id="education-container"></div>
+    <button type="button" onclick="addEducation()">➕ Add Education</button>
+
+    <br><br>
+    <button type="button" onclick="saveResume()">💾 Save Resume</button>
+    <button type="button" onclick="downloadPDF()">⬇ Download PDF</button>
+
+  </div>
+
+  PREVIEW SECTION
+  <div class="preview-section"> -->
+    <!-- <h2>Resume Preview</h2>
+    <img id="preview-photo" width="100">
+    <div id="preview-content"></div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html> -->
+
+
+<!-- STEP 5 GOING  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ATS Resume Builder</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- FORM SECTION -->
+  <div class="form-section">
+
+    <h1>ATS Resume Builder</h1>
+
+    <h2>Personal Information</h2>
+    <input id="name" type="text" placeholder="Full Name" oninput="updatePreview()">
+    <input id="email" type="email" placeholder="Email" oninput="updatePreview()">
+    <input id="phone" type="tel" placeholder="Phone" oninput="updatePreview()">
+    <input id="location" type="text" placeholder="Location" oninput="updatePreview()">
+
+    <h2>Professional Summary</h2>
+    <textarea id="summary" rows="3" placeholder="2–3 lines about you" oninput="updatePreview()"></textarea>
+
+    <h2>Work Experience</h2>
+    <div id="experience-container"></div>
+    <button type="button" onclick="addExperience()">➕ Add Experience</button>
+
+    <h2>Education</h2>
+    <div id="education-container"></div>
+    <button type="button" onclick="addEducation()">➕ Add Education</button>
+
+    <br><br>
+    <button type="button" onclick="downloadPDF()">⬇ Download ATS Resume</button>
+
+  </div>
+
+  <!-- PREVIEW SECTION -->
+  <div class="preview-section" id="resume-preview">
+
+    <h1 id="p-name">Your Name</h1>
+    <p id="p-contact">Email | Phone | Location</p>
+
+    <hr>
+
+    <h2>SUMMARY</h2>
+    <p id="p-summary"></p>
+
+    <h2>EXPERIENCE</h2>
+    <ul id="p-experience"></ul>
+
+    <h2>EDUCATION</h2>
+    <ul id="p-education"></ul>
+
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
+
