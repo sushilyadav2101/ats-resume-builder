@@ -35,5 +35,17 @@ function generateResume() {
 }
 
 function downloadPDF() {
-  window.print();
+  const resume = document.getElementById("resume");
+
+  const options = {
+    margin: 0.5,
+    filename: 'My_Resume.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(options).from(resume).save();
 }
+
+
