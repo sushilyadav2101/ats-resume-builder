@@ -45,3 +45,7 @@ button {
   border-radius: 6px;
   display: none;
 }
+#resume p {
+  margin: 4px 0;
+  font-size: 14px;
+}
