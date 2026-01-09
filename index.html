@@ -2,66 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ATS Resume Builder</title>
-
-  <!-- jsPDF CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+  <title>Resume Builder</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>ATS Resume Builder</h1>
+<h1>Resume Builder</h1>
 
-<!-- ================= FORM ================= -->
+<div class="container">
 
-<section>
-  <h2>Personal Details</h2>
-  <input type="text" id="name" placeholder="Full Name">
-  <input type="email" id="email" placeholder="Email">
-  <input type="text" id="location" placeholder="Location (City, Country)">
-  <input type="text" id="university" placeholder="Current University">
-</section>
+  <!-- ===== FORM ===== -->
+  <div class="form">
 
-<section>
-  <h2>Education</h2>
-  <input type="text" id="degree" placeholder="Degree (e.g. B.Tech)">
-  <input type="text" id="institute" placeholder="Institute">
-  <input type="text" id="eduYear" placeholder="Year (e.g. 2024)">
-  <input type="number" step="0.01" id="cgpa" placeholder="CGPA (optional)">
-  <input type="number" step="0.01" id="percentage" placeholder="Percentage (optional)">
-</section>
+    <h2>Personal Details</h2>
+    <input id="name" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="location" placeholder="Location">
+    <input id="university" placeholder="Current University">
 
-<section>
-  <h2>Experience</h2>
-  <input type="text" id="company" placeholder="Company Name">
-  <textarea id="achievement" placeholder="Achievements / Responsibilities"></textarea>
-</section>
+    <label>Upload Photo</label>
+    <input type="file" id="photo" accept="image/*">
 
-<button onclick="generateResume()">Generate Resume</button>
-<button onclick="downloadPDF()">Download PDF</button>
+    <h2>Education</h2>
+    <input id="degree" placeholder="Degree">
+    <input id="institute" placeholder="Institute">
+    <input id="eduYear" placeholder="Year">
+    <input id="cgpa" placeholder="CGPA">
+    <input id="percentage" placeholder="Percentage">
 
-<hr>
+    <h2>Experience</h2>
+    <input id="company" placeholder="Company Name">
+    <textarea id="achievement" placeholder="Achievements"></textarea>
 
-<!-- ================= PREVIEW ================= -->
+    <button onclick="generateResume()">Generate Resume</button>
+    <button onclick="downloadPDF()">Download PDF</button>
 
-<section id="resume">
-  <h2 id="previewName"></h2>
-  <p id="previewEmail"></p>
-  <p id="previewLocation"></p>
-  <p id="previewUniversity"></p>
+  </div>
 
-  <h3>Education</h3>
-  <p><strong>Degree:</strong> <span id="previewDegree"></span></p>
-  <p><strong>Institute:</strong> <span id="previewInstitute"></span></p>
-  <p><strong>Year:</strong> <span id="previewEduYear"></span></p>
-  <p><strong>CGPA:</strong> <span id="previewCgpa"></span></p>
-  <p><strong>Percentage:</strong> <span id="previewPercentage"></span></p>
+  <!-- ===== PREVIEW ===== -->
+  <div class="preview">
+    <section id="resume">
 
-  <h3>Experience</h3>
-  <p><strong>Company:</strong> <span id="previewCompany"></span></p>
-  <p><strong>Achievements:</strong> <span id="previewAchievement"></span></p>
-</section>
+      <div class="resume-header">
+        <div>
+          <h2 id="previewName"></h2>
+          <p id="previewEmail"></p>
+          <p id="previewLocation"></p>
+          <p id="previewUniversity"></p>
+        </div>
+        <img id="previewPhoto">
+      </div>
+
+      <h3>Education</h3>
+      <p><b>Degree:</b> <span id="previewDegree"></span></p>
+      <p><b>Institute:</b> <span id="previewInstitute"></span></p>
+      <p><b>Year:</b> <span id="previewEduYear"></span></p>
+      <p><b>CGPA:</b> <span id="previewCgpa"></span></p>
+      <p><b>Percentage:</b> <span id="previewPercentage"></span></p>
+
+      <h3>Experience</h3>
+      <p><b>Company:</b> <span id="previewCompany"></span></p>
+      <p><b>Achievements:</b> <span id="previewAchievement"></span></p>
+
+    </section>
+  </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>

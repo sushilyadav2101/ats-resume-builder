@@ -1,59 +1,39 @@
+function getValue(id) {
+  return document.getElementById(id).value || "";
+}
+
 function generateResume() {
 
-  // PERSONAL
-  previewName.innerText = name.value;
-  previewEmail.innerText = "Email: " + email.value;
-  previewLocation.innerText = "Location: " + location.value;
-  previewUniversity.innerText = "University: " + university.value;
+  document.getElementById("previewName").innerText = getValue("name");
+  document.getElementById("previewEmail").innerText = getValue("email");
+  document.getElementById("previewLocation").innerText = getValue("location");
+  document.getElementById("previewUniversity").innerText = getValue("university");
 
-  // EDUCATION
-  previewDegree.innerText = degree.value;
-  previewInstitute.innerText = institute.value;
-  previewEduYear.innerText = eduYear.value;
+  document.getElementById("previewDegree").innerText = getValue("degree");
+  document.getElementById("previewInstitute").innerText = getValue("institute");
+  document.getElementById("previewEduYear").innerText = getValue("eduYear");
+  document.getElementById("previewCgpa").innerText = getValue("cgpa");
+  document.getElementById("previewPercentage").innerText = getValue("percentage");
 
-  previewCgpa.innerText = cgpa.value ? cgpa.value : "—";
-  previewPercentage.innerText = percentage.value ? percentage.value + "%" : "—";
+  document.getElementById("previewCompany").innerText = getValue("company");
+  document.getElementById("previewAchievement").innerText = getValue("achievement");
 
-  // EXPERIENCE
-  previewCompany.innerText = company.value;
-  previewAchievement.innerText = achievement.value;
+  // PHOTO
+  const photo = document.getElementById("photo");
+  const previewPhoto = document.getElementById("previewPhoto");
+
+  if (photo.files && photo.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      previewPhoto.src = e.target.result;
+      previewPhoto.style.display = "block";
+    };
+    reader.readAsDataURL(photo.files[0]);
+  } else {
+    previewPhoto.style.display = "none";
+  }
 }
 
 function downloadPDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-
-  let y = 10;
-
-  doc.setFontSize(16);
-  doc.text(previewName.innerText, 10, y); y += 8;
-
-  doc.setFontSize(11);
-  doc.text(previewEmail.innerText, 10, y); y += 6;
-  doc.text(previewLocation.innerText, 10, y); y += 6;
-  doc.text(previewUniversity.innerText, 10, y); y += 10;
-
-  doc.setFontSize(14);
-  doc.text("Education", 10, y); y += 8;
-
-  doc.setFontSize(11);
-  doc.text("Degree: " + previewDegree.innerText, 10, y); y += 6;
-  doc.text("Institute: " + previewInstitute.innerText, 10, y); y += 6;
-  doc.text("Year: " + previewEduYear.innerText, 10, y); y += 6;
-  doc.text("CGPA: " + previewCgpa.innerText, 10, y); y += 6;
-  doc.text("Percentage: " + previewPercentage.innerText, 10, y); y += 10;
-
-  doc.setFontSize(14);
-  doc.text("Experience", 10, y); y += 8;
-
-  doc.setFontSize(11);
-  doc.text("Company: " + previewCompany.innerText, 10, y); y += 6;
-  doc.text("Achievements:", 10, y); y += 6;
-
-  doc.text(previewAchievement.innerText, 10, y, { maxWidth: 180 });
-
-  doc.save("ATS_Resume.pdf");
+  window.print();
 }
-
-
-
